@@ -1,0 +1,27 @@
+package javainputoutput;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileDemo01 {
+
+	public static void main(String[] args) {
+		//File file = new File("F:\\temp","file.txt"); //instantiate file class
+		//File file = new File("F:\\temp\\file.txt"); //instantiate file class
+		File file = new File("F:"+File.separator+"temp"+File.separator+"file.txt"); //instantiate file class
+		
+		try{                                                       //Exception handling
+			file.createNewFile();                                  //create new file
+			System.out.println("File is created!!!");              //print out result message
+			System.out.println(file.getAbsolutePath());
+			System.out.println(file.getPath());
+		}
+		catch(IOException e){
+			System.out.println("File is not created!!!");
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}
